@@ -323,7 +323,7 @@ func (c *Collection) MustRegisterTx(fns ...func(DB) error) {
 }
 
 func (c *Collection) Migrations() []*Migration {
-	_ = c.discoverSQLMigrations(migrationFile())
+	_ = c.discoverSQLMigrations("/")
 
 	c.mu.Lock()
 	defer c.mu.Unlock()
